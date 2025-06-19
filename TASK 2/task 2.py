@@ -4,7 +4,7 @@ import os
 
 csv_file = 'data.csv'
 
-# Check if CSV exists and is NOT empty
+
 if not os.path.exists(csv_file) or os.path.getsize(csv_file) == 0:
     df = pd.DataFrame({
         'Name': ['riaz', 'shakeel', 'misba', 'aqeel', 'hajee'],
@@ -13,15 +13,15 @@ if not os.path.exists(csv_file) or os.path.getsize(csv_file) == 0:
     df.to_csv(csv_file, index=False)
     print("Sample data.csv file created!")
 
-# Read CSV Data
+
 data = pd.read_csv(csv_file)
 
-# Basic Analysis
+
 mean_score = data['Score'].mean()
 max_score = data['Score'].max()
 min_score = data['Score'].min()
 
-# Generate PDF Report
+
 pdf = FPDF()
 pdf.add_page()
 pdf.set_font("Arial", size=12)
